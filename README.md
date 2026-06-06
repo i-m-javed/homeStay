@@ -53,12 +53,27 @@ A full-stack web application built with Node.js, Express, and MongoDB that mimic
 
 <table>
 <tr>
-<td><img src="assets/homePage.png" width="500"/></td>
-<td><img src="assets/dashBoard.png" width="500"/></td>
+<td align="center">
+<b>Home Page</b><br>
+<img src="assets/homePage.png" width="500"/>
+</td>
+
+<td align="center">
+<b>Host Dashboard</b><br>
+<img src="assets/dashBoard.png" width="500"/>
+</td>
 </tr>
+
 <tr>
-<td><img src="assets/details.png" width="500"/></td>
-<td><img src="assets/booking.png" width="500"/></td>
+<td align="center">
+<b>Property Details</b><br>
+<img src="assets/details.png" width="500"/>
+</td>
+
+<td align="center">
+<b>Bookings</b><br>
+<img src="assets/booking.png" width="500"/>
+</td>
 </tr>
 </table>
 
