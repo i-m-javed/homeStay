@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 const session = require("express-session");
@@ -51,10 +52,10 @@ app.use(hostRouter);
 
 app.use(storeController.get404Page);
 
-const port = 3002;
+const port = process.env.PORT;
 
 mongoose
-  .connect(db_path)
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("Connected to database");
 

@@ -1,45 +1,964 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head', { pageTitle: 'Welcome to Airbnb' }) %>
-  <body class="bg-gray-50 text-gray-800 font-sans">
-    <div class="min-h-screen flex flex-col">
-      <%- include('../partials/nav') %>
+  <%- include('../partials/head', { pageTitle: 'Welcome to HomeStay' }) %>
 
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <%- include('../partials/nav') %>
+
+    <div class="min-h-screen flex flex-col">
       <!-- Hero Section -->
       <section
-        class="relative bg-white py-15 text-center shadow-md overflow-hidden"
+        class="relative bg-gradient-to-br from-white via-red-50 to-white py-16 md:py-18 text-center overflow-hidden"
       >
+        <!-- Decorative background elements -->
+        <div
+          class="absolute top-0 left-0 w-72 h-72 bg-red-100 rounded-full opacity-30 -translate-x-1/2 -translate-y-1/2 blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-96 h-96 bg-red-100 rounded-full opacity-20 translate-x-1/3 translate-y-1/3 blur-3xl"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 w-64 h-64 bg-red-200 rounded-full opacity-10 -translate-x-1/2 -translate-y-1/2 blur-2xl"
+        ></div>
+
         <div class="max-w-5xl mx-auto px-6 z-10 relative">
-          <h1 class="text-5xl md:text-6xl font-extrabold text-red-500 mb-4">
-            Welcome to airbnb
+          <span
+            class="inline-block bg-red-100 text-red-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase"
+            >🏠 Your Next Adventure Awaits</span
+          >
+          <h1
+            class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-tight"
+          >
+            Find Your Perfect
+            <span class="text-red-500 relative">
+              HomeStay
+              <svg
+                class="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 200 12"
+                fill="none"
+              >
+                <path
+                  d="M2 8C30 3 70 2 100 5C130 8 170 4 198 7"
+                  stroke="#ef4444"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  opacity="0.4"
+                />
+              </svg>
+            </span>
           </h1>
-          <p class="text-xl md:text-2xl text-gray-600 mb-8">
-            Find unforgettable stays and unique experiences, anywhere in the
-            world.
+          <p
+            class="text-xl md:text-2xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed"
+          >
+            Discover unforgettable stays and unique experiences in
+            <span class="font-semibold text-gray-700">120+ countries</span>
+            around the world.
           </p>
-          <div class="space-x-4">
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
             <a
               href="/signup"
-              class="bg-red-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-red-600 transition"
-              >Get Started</a
+              class="group bg-red-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-red-600 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2"
             >
+              Get Started Free
+              <svg
+                class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
             <a
               href="/login"
-              class="text-red-500 font-semibold underline hover:text-red-600 transition"
-              >Already have an account?</a
+              class="text-gray-600 font-semibold px-8 py-4 rounded-full border-2 border-gray-200 hover:border-red-300 hover:text-red-500 transition-all duration-300"
             >
+              Already have an account?
+            </a>
+          </div>
+
+          <!-- Trust indicators -->
+          <div
+            class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-400"
+          >
+            <div class="flex items-center gap-2">
+              <svg
+                class="w-5 h-5 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span>Free to join</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg
+                class="w-5 h-5 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span>No hidden fees</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg
+                class="w-5 h-5 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span>24/7 support</span>
+            </div>
           </div>
         </div>
 
         <div class="mt-20"><%- include('../partials/features') %></div>
       </section>
 
+      <!-- Stats / Trust Bar Section -->
+      <section class="relative bg-red-500 py-16 overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-red-600 via-red-500 to-red-600 opacity-50"
+        ></div>
+        <!-- Decorative pattern -->
+        <div class="absolute inset-0 opacity-10">
+          <div
+            class="absolute top-4 left-10 w-20 h-20 border-2 border-white rounded-full"
+          ></div>
+          <div
+            class="absolute bottom-4 right-20 w-32 h-32 border-2 border-white rounded-full"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/3 w-16 h-16 border-2 border-white rounded-full"
+          ></div>
+        </div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white"
+          >
+            <div class="group">
+              <p
+                class="text-4xl md:text-5xl font-extrabold group-hover:scale-110 transition-transform duration-300"
+              >
+                10K+
+              </p>
+              <div
+                class="w-12 h-1 bg-white/40 rounded-full mx-auto mt-3 mb-2"
+              ></div>
+              <p
+                class="text-sm md:text-base font-medium uppercase tracking-wide opacity-90"
+              >
+                Listings Worldwide
+              </p>
+            </div>
+            <div class="group">
+              <p
+                class="text-4xl md:text-5xl font-extrabold group-hover:scale-110 transition-transform duration-300"
+              >
+                50K+
+              </p>
+              <div
+                class="w-12 h-1 bg-white/40 rounded-full mx-auto mt-3 mb-2"
+              ></div>
+              <p
+                class="text-sm md:text-base font-medium uppercase tracking-wide opacity-90"
+              >
+                Happy Guests
+              </p>
+            </div>
+            <div class="group">
+              <p
+                class="text-4xl md:text-5xl font-extrabold group-hover:scale-110 transition-transform duration-300"
+              >
+                120+
+              </p>
+              <div
+                class="w-12 h-1 bg-white/40 rounded-full mx-auto mt-3 mb-2"
+              ></div>
+              <p
+                class="text-sm md:text-base font-medium uppercase tracking-wide opacity-90"
+              >
+                Countries
+              </p>
+            </div>
+            <div class="group">
+              <p
+                class="text-4xl md:text-5xl font-extrabold group-hover:scale-110 transition-transform duration-300"
+              >
+                4.9★
+              </p>
+              <div
+                class="w-12 h-1 bg-white/40 rounded-full mx-auto mt-3 mb-2"
+              ></div>
+              <p
+                class="text-sm md:text-base font-medium uppercase tracking-wide opacity-90"
+              >
+                Average Rating
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Destinations Section -->
+      <section class="bg-white py-24">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <span
+              class="inline-block bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest"
+              >Trending Now</span
+            >
+            <h2 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4">
+              Popular Destinations
+            </h2>
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+              Explore trending locations loved by travelers around the globe.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Destination Card 1 -->
+            <div
+              class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80"
+                alt="Paris"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+              ></div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-red-500 text-xs font-bold px-3 py-1 rounded-full"
+              >
+                🔥 Popular
+              </div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <h3 class="text-white text-xl font-bold">Paris, France</h3>
+                <p class="text-gray-300 text-sm mt-1 flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+                    />
+                  </svg>
+                  1,200+ stays available
+                </p>
+              </div>
+            </div>
+            <!-- Destination Card 2 -->
+            <div
+              class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80"
+                alt="Tokyo"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+              ></div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-red-500 text-xs font-bold px-3 py-1 rounded-full"
+              >
+                ✨ Trending
+              </div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <h3 class="text-white text-xl font-bold">Tokyo, Japan</h3>
+                <p class="text-gray-300 text-sm mt-1">800+ stays available</p>
+              </div>
+            </div>
+            <!-- Destination Card 3 -->
+            <div
+              class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80"
+                alt="New York"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+              ></div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-red-500 text-xs font-bold px-3 py-1 rounded-full"
+              >
+                🏙️ Top Rated
+              </div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <h3 class="text-white text-xl font-bold">New York, USA</h3>
+                <p class="text-gray-300 text-sm mt-1">2,000+ stays available</p>
+              </div>
+            </div>
+            <!-- Destination Card 4 -->
+            <div
+              class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80"
+                alt="Bali"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+              ></div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-red-500 text-xs font-bold px-3 py-1 rounded-full"
+              >
+                🌴 Paradise
+              </div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <h3 class="text-white text-xl font-bold">Bali, Indonesia</h3>
+                <p class="text-gray-300 text-sm mt-1">950+ stays available</p>
+              </div>
+            </div>
+            <!-- Destination Card 5 -->
+            <div
+              class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=600&q=80"
+                alt="Sydney"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+              ></div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <h3 class="text-white text-xl font-bold">Sydney, Australia</h3>
+                <p class="text-gray-300 text-sm mt-1">600+ stays available</p>
+              </div>
+            </div>
+            <!-- Destination Card 6 -->
+            <div
+              class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80"
+                alt="Rome"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+              ></div>
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-red-500 text-xs font-bold px-3 py-1 rounded-full"
+              >
+                🏛️ Historic
+              </div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <h3 class="text-white text-xl font-bold">Rome, Italy</h3>
+                <p class="text-gray-300 text-sm mt-1">1,100+ stays available</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-12">
+            <a
+              href="/listings"
+              class="inline-flex items-center gap-2 text-red-500 font-semibold hover:text-red-600 transition group"
+            >
+              View all destinations
+              <svg
+                class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- Become a Host Section -->
       <%- include('../partials/becomeHost') %>
+
       <!-- How it Works Section -->
       <%- include('../partials/howItWork') %>
 
-      <!-- Become a Host Section -->
+      <!-- Testimonials Section -->
+      <section class="bg-gradient-to-b from-white to-gray-50 py-24">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <span
+              class="inline-block bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest"
+              >Testimonials</span
+            >
+            <h2 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4">
+              What Our Guests Say
+            </h2>
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+              Real stories from real travelers who found their perfect stay.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div
+              class="relative bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-1"
+            >
+              <div
+                class="absolute -top-4 left-8 bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold shadow-lg"
+              >
+                "
+              </div>
+              <div class="flex items-center mb-4 mt-2">
+                <span class="text-red-400 text-lg tracking-wider">★★★★★</span>
+                <span class="text-gray-400 text-sm ml-2">5.0</span>
+              </div>
+              <p class="text-gray-600 italic leading-relaxed mb-6">
+                "HomeStay made our family vacation absolutely magical. The
+                listing was exactly as described, and the host was incredibly
+                welcoming. We'll definitely be back!"
+              </p>
+              <div class="flex items-center pt-4 border-t border-gray-100">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4 shadow-md"
+                >
+                  S
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800">Sarah M.</p>
+                  <p class="text-gray-400 text-sm flex items-center gap-1">
+                    <svg
+                      class="w-3.5 h-3.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Traveled to Bali
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div
+              class="relative bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-1 md:mt-6"
+            >
+              <div
+                class="absolute -top-4 left-8 bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold shadow-lg"
+              >
+                "
+              </div>
+              <div class="flex items-center mb-4 mt-2">
+                <span class="text-red-400 text-lg tracking-wider">★★★★★</span>
+                <span class="text-gray-400 text-sm ml-2">5.0</span>
+              </div>
+              <p class="text-gray-600 italic leading-relaxed mb-6">
+                "As a solo traveler, I was looking for something safe and cozy.
+                HomeStay delivered beyond expectations. The entire process was
+                seamless from booking to checkout."
+              </p>
+              <div class="flex items-center pt-4 border-t border-gray-100">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4 shadow-md"
+                >
+                  J
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800">James L.</p>
+                  <p class="text-gray-400 text-sm flex items-center gap-1">
+                    <svg
+                      class="w-3.5 h-3.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Traveled to Tokyo
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div
+              class="relative bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-1"
+            >
+              <div
+                class="absolute -top-4 left-8 bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold shadow-lg"
+              >
+                "
+              </div>
+              <div class="flex items-center mb-4 mt-2">
+                <span class="text-red-400 text-lg tracking-wider">★★★★★</span>
+                <span class="text-gray-400 text-sm ml-2">5.0</span>
+              </div>
+              <p class="text-gray-600 italic leading-relaxed mb-6">
+                "We hosted our anniversary trip through HomeStay and it was
+                perfect. The apartment in Paris had a stunning Eiffel Tower
+                view. Highly recommend to all couples!"
+              </p>
+              <div class="flex items-center pt-4 border-t border-gray-100">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4 shadow-md"
+                >
+                  A
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800">Amara & David</p>
+                  <p class="text-gray-400 text-sm flex items-center gap-1">
+                    <svg
+                      class="w-3.5 h-3.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Traveled to Paris
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Browse by Category Section -->
+      <section class="bg-white py-24">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <span
+              class="inline-block bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest"
+              >Categories</span
+            >
+            <h2 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4">
+              Browse by Category
+            </h2>
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+              Whether it's a treehouse or a luxury villa, we have something for
+              every taste.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div
+              class="group bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 text-center shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 hover:border-red-200"
+            >
+              <div
+                class="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300"
+              >
+                🏖️
+              </div>
+              <p
+                class="font-semibold text-gray-700 group-hover:text-red-500 transition-colors"
+              >
+                Beachfront
+              </p>
+              <p class="text-xs text-gray-400 mt-1">2.4K stays</p>
+            </div>
+            <div
+              class="group bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 text-center shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 hover:border-red-200"
+            >
+              <div
+                class="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300"
+              >
+                🏔️
+              </div>
+              <p
+                class="font-semibold text-gray-700 group-hover:text-red-500 transition-colors"
+              >
+                Mountain
+              </p>
+              <p class="text-xs text-gray-400 mt-1">1.8K stays</p>
+            </div>
+            <div
+              class="group bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 text-center shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 hover:border-red-200"
+            >
+              <div
+                class="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300"
+              >
+                🏡
+              </div>
+              <p
+                class="font-semibold text-gray-700 group-hover:text-red-500 transition-colors"
+              >
+                Countryside
+              </p>
+              <p class="text-xs text-gray-400 mt-1">1.2K stays</p>
+            </div>
+            <div
+              class="group bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 text-center shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 hover:border-red-200"
+            >
+              <div
+                class="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300"
+              >
+                🏰
+              </div>
+              <p
+                class="font-semibold text-gray-700 group-hover:text-red-500 transition-colors"
+              >
+                Castles
+              </p>
+              <p class="text-xs text-gray-400 mt-1">340 stays</p>
+            </div>
+            <div
+              class="group bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 text-center shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 hover:border-red-200"
+            >
+              <div
+                class="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300"
+              >
+                🌲
+              </div>
+              <p
+                class="font-semibold text-gray-700 group-hover:text-red-500 transition-colors"
+              >
+                Treehouses
+              </p>
+              <p class="text-xs text-gray-400 mt-1">560 stays</p>
+            </div>
+            <div
+              class="group bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 text-center shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 hover:border-red-200"
+            >
+              <div
+                class="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300"
+              >
+                🏙️
+              </div>
+              <p
+                class="font-semibold text-gray-700 group-hover:text-red-500 transition-colors"
+              >
+                City Life
+              </p>
+              <p class="text-xs text-gray-400 mt-1">3.6K stays</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- App Download / Experience Section -->
+      <section class="bg-gray-50 py-24">
+        <div class="max-w-6xl mx-auto px-6">
+          <div
+            class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+              <div class="p-10 md:p-14 flex flex-col justify-center">
+                <span
+                  class="inline-block bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full mb-6 uppercase tracking-widest w-fit"
+                  >Mobile App</span
+                >
+                <h2
+                  class="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight"
+                >
+                  Take HomeStay<br />Wherever You Go
+                </h2>
+                <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                  Download our app for instant booking, real-time messaging with
+                  hosts, and exclusive mobile-only deals.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                  <a
+                    href="#"
+                    class="inline-flex items-center gap-3 bg-white text-gray-900 font-semibold px-6 py-3 rounded-xl hover:bg-gray-100 transition shadow-lg"
+                  >
+                    <svg
+                      class="w-7 h-7"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                      />
+                    </svg>
+                    <div class="text-left">
+                      <div class="text-xs text-gray-500">Download on the</div>
+                      <div class="text-sm font-bold -mt-0.5">App Store</div>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="inline-flex items-center gap-3 bg-white text-gray-900 font-semibold px-6 py-3 rounded-xl hover:bg-gray-100 transition shadow-lg"
+                  >
+                    <svg
+                      class="w-7 h-7"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.4l2.651 1.535c.392.227.651.651.651 1.158 0 .507-.259.931-.651 1.158l-2.651 1.535-2.534-2.534 2.534-2.852zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"
+                      />
+                    </svg>
+                    <div class="text-left">
+                      <div class="text-xs text-gray-500">Get it on</div>
+                      <div class="text-sm font-bold -mt-0.5">Google Play</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="relative hidden md:flex items-center justify-center p-10"
+              >
+                <div class="relative">
+                  <!-- Phone mockup -->
+                  <div
+                    class="w-56 h-[420px] bg-gray-700 rounded-[2.5rem] border-4 border-gray-600 shadow-2xl overflow-hidden"
+                  >
+                    <div
+                      class="w-full h-full bg-gradient-to-b from-red-500 to-red-600 flex flex-col items-center justify-center text-white p-6"
+                    >
+                      <div class="text-5xl mb-4">🏠</div>
+                      <p class="text-xl font-bold">HomeStay</p>
+                      <p class="text-sm opacity-80 mt-1">Book anywhere</p>
+                      <div
+                        class="mt-8 bg-white/20 rounded-xl p-4 w-full backdrop-blur-sm"
+                      >
+                        <div
+                          class="h-3 bg-white/30 rounded-full w-3/4 mb-2"
+                        ></div>
+                        <div
+                          class="h-3 bg-white/30 rounded-full w-1/2 mb-2"
+                        ></div>
+                        <div class="h-3 bg-white/30 rounded-full w-2/3"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Floating notification -->
+                  <div
+                    class="absolute -top-4 -right-8 bg-white rounded-xl shadow-xl p-3 flex items-center gap-2 animate-bounce"
+                    style="animation-duration: 3s"
+                  >
+                    <div
+                      class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm"
+                    >
+                      ✓
+                    </div>
+                    <div>
+                      <p class="text-xs font-bold text-gray-800">
+                        Booking Confirmed!
+                      </p>
+                      <p class="text-[10px] text-gray-400">Paris, France</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="bg-white py-24">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <span
+              class="inline-block bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest"
+              >Support</span
+            >
+            <h2 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+              Got questions? We've got answers.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <details
+              class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:border-red-200 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 hover:text-red-500 transition"
+              >
+                <span class="flex items-center gap-3">
+                  <span
+                    class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-500 text-sm flex-shrink-0"
+                    >01</span
+                  >
+                  How do I book a stay on HomeStay?
+                </span>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-300 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-6 pb-5 pl-[4.25rem] text-gray-600 leading-relaxed">
+                Simply sign up for an account, browse available listings, select
+                your dates, and confirm your booking. It's that easy! You'll
+                receive a confirmation email with all the details.
+              </div>
+            </details>
+            <details
+              class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:border-red-200 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 hover:text-red-500 transition"
+              >
+                <span class="flex items-center gap-3">
+                  <span
+                    class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-500 text-sm flex-shrink-0"
+                    >02</span
+                  >
+                  Is it free to list my property?
+                </span>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-300 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-6 pb-5 pl-[4.25rem] text-gray-600 leading-relaxed">
+                Yes! Listing your property on HomeStay is completely free. We
+                only charge a small service fee when you receive a booking, so
+                you only pay when you earn.
+              </div>
+            </details>
+            <details
+              class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:border-red-200 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 hover:text-red-500 transition"
+              >
+                <span class="flex items-center gap-3">
+                  <span
+                    class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-500 text-sm flex-shrink-0"
+                    >03</span
+                  >
+                  What if I need to cancel my reservation?
+                </span>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-300 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-6 pb-5 pl-[4.25rem] text-gray-600 leading-relaxed">
+                Cancellation policies vary by listing. You can view the specific
+                cancellation policy on each listing page before you book. Most
+                hosts offer flexible or moderate cancellation options.
+              </div>
+            </details>
+            <details
+              class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:border-red-200 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 hover:text-red-500 transition"
+              >
+                <span class="flex items-center gap-3">
+                  <span
+                    class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-500 text-sm flex-shrink-0"
+                    >04</span
+                  >
+                  How does HomeStay ensure safety?
+                </span>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-300 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-6 pb-5 pl-[4.25rem] text-gray-600 leading-relaxed">
+                We verify host identities, provide secure payment processing,
+                and offer 24/7 customer support. Our review system also helps
+                maintain high standards across all listings.
+              </div>
+            </details>
+            <details
+              class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:border-red-200 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 hover:text-red-500 transition"
+              >
+                <span class="flex items-center gap-3">
+                  <span
+                    class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-500 text-sm flex-shrink-0"
+                    >05</span
+                  >
+                  Can I contact the host before booking?
+                </span>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-300 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-6 pb-5 pl-[4.25rem] text-gray-600 leading-relaxed">
+                Absolutely! Each listing has a "Contact Host" button that lets
+                you message the host directly. Ask about amenities, check-in
+                times, or anything else before committing.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Made By Section -->
       <%- include('../partials/madeBy') %>
 
       <!-- Footer -->

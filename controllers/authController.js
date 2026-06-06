@@ -17,9 +17,20 @@ exports.postLoginPage = async (req, res, next) => {
 
   const user = await User.findOne({ email });
 
+  if (!user) {
+    return res.render("auth/loginPage", {
+      pageTitle: "Login",
+      isLoggedIn: false,
+      errors: ["Invalid email or password."],
+      oldInputs: email,
+      user: {},
+    });
+  }
+
   const isPasswordMatched = await bcrypt.compare(password, user.password);
 
-  if (user && isPasswordMatched) {
+  if (isPasswordMatched) {
+    console.log("Password matched");
     req.session.isLoggedIn = true;
     req.session.user = user;
     await req.session.save();
@@ -41,7 +52,7 @@ exports.postLogout = async (req, res, next) => {
 };
 
 exports.getSignUpPage = (req, res) => {
-  res.render("auth/signUpPage", {
+  res.render("auth/signupPage", {
     pageTitle: "SignUp",
     isLoggedIn: req.session.isLoggedIn,
     errors: [],
@@ -117,7 +128,7 @@ exports.postSignUpPage = [
     const error = validationResult(req);
 
     if (!error.isEmpty()) {
-      return res.status(422).render("auth/signUpPage", {
+      return res.status(422).render("auth/signupPage", {
         pageTitle: "SignUp",
         isLoggedIn: req.session.isLoggedIn,
         errors: error.array().map((err) => err.msg),
@@ -141,12 +152,15 @@ exports.postSignUpPage = [
         email,
         password: hashPassword,
         userType,
+        favorites: [],
+        reserves: [],
+        booked: [],
       });
 
       await user.save();
       res.redirect("/login");
     } catch (err) {
-      return res.status(422).render("auth/signUpPage", {
+      return res.status(422).render("auth/signupPage", {
         pageTitle: "SignUp",
         isLoggedIn: req.session.isLoggedIn,
         errors: [err.message],

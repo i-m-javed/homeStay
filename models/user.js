@@ -15,21 +15,21 @@ const userSchema = mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Home",
-      unique: true,
+      default: [],
     },
   ],
   reserves: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Home",
-      unique: true,
+      default: [],
     },
   ],
   booked: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Home",
-      unique: true,
+      default: [],
     },
   ],
 });
