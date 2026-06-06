@@ -8,6 +8,10 @@
 
 A full-stack web application built with Node.js, Express, and MongoDB that mimics the core functionalities of a property rental marketplace like Airbnb. The platform supports role-based user flows, allowing users to register as either guests or hosts. Guests can browse available homes, manage favorites, make reservations, and book stays. Hosts have full CRUD (Create, Read, Update, Delete) capabilities to manage property listings, including secure image and PDF uploads.
 
+## Demo
+
+<img src="assets/homeStay.gif" width="100%">
+
 ## Highlights
 
 - Implemented role-based authentication and authorization.
@@ -19,31 +23,34 @@ A full-stack web application built with Node.js, Express, and MongoDB that mimic
 
 ## Features
 
-**Authentication & Authorization**
-* User registration and login system with secure password hashing.
-* Role-based access control distinguishing between `guest` and `host` accounts.
-* Persistent, secure user sessions stored directly in MongoDB.
+### Authentication & Authorization
+- User registration and login
+- Secure password hashing
+- Role-based access control
+- MongoDB-backed sessions
 
-**Property Management (Hosts)**
-* Create, read, update, and delete (CRUD) property listings.
-* Secure multipart file uploads for property photos and PDF house rules using Multer.
-* Automated cleanup of references (favorites, reserves, bookings) when a property is deleted via Mongoose pre-hooks.
+### Property Management
+- Create, edit, and delete listings
+- Image uploads
+- PDF house rules uploads
+- Automatic cleanup of related references
 
-**User Experience (Guests)**
-* Browse a catalog of available homes.
-* Add or remove homes from a personal "Favorites" list.
-* Reserve homes for future dates.
-* Finalize bookings for selected properties.
-* Clear booking history.
+### Guest Experience
+- Browse properties
+- Manage favorites
+- Reserve homes
+- Book stays
+- Clear booking history
 
 ## Screenshots
 
-<p align="center">
-  <img src="assets/homePage.png" width="400">
-  <img src="assets/dashBoard.png" width="400">
-  <img src="assets/details.png" width="400">
-  <img src="assets/booking.png" width="400">
-</p>
+| Home Page | Host Dashboard |
+|------------|------------|
+| ![](assets/homePage.png) | ![](assets/dashBoard.png) |
+
+| Property Details | Bookings |
+|------------|------------|
+| ![](assets/details.png) | ![](assets/booking.png) |
 
 ## Tech Stack
 
@@ -61,10 +68,7 @@ A full-stack web application built with Node.js, Express, and MongoDB that mimic
 
 The application follows a traditional **MVC (Model-View-Controller)** architecture and relies on Server-Side Rendering (SSR):
 
-1.  **Models (`/models`)**: Defines the Mongoose schemas and database interactions. Includes business logic like cascading deletions to maintain referential integrity.
-2.  **Views (`/views`)**: Contains EJS templates that dynamically generate HTML based on the data provided by the controllers.
-3.  **Controllers (`/controllers`)**: Handles incoming HTTP requests, interacts with the database via Models, and renders the appropriate Views.
-4.  **Routes (`/routes`)**: Maps HTTP methods and endpoint URLs to specific controller functions.
+
 
 ## Project Structure
 
@@ -182,8 +186,3 @@ Contributions are always welcome! Please fork the repository and create a pull r
 ## License
 
 ISC License (as specified in `package.json`).
-
-
-is all good and recruiter 
-
-is it looking cluttered and text heavy ?
