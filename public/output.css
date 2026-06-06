@@ -254,11 +254,17 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .visible {
+    visibility: visible;
+  }
   .absolute {
     position: absolute;
   }
   .relative {
     position: relative;
+  }
+  .static {
+    position: static;
   }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
