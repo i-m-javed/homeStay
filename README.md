@@ -1,8 +1,21 @@
 # HomeStay
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![EJS](https://img.shields.io/badge/EJS-B4CA65?style=for-the-badge)
 
 ## Overview
 
 A full-stack web application built with Node.js, Express, and MongoDB that mimics the core functionalities of a property rental marketplace like Airbnb. The platform supports role-based user flows, allowing users to register as either guests or hosts. Guests can browse available homes, manage favorites, make reservations, and book stays. Hosts have full CRUD (Create, Read, Update, Delete) capabilities to manage property listings, including secure image and PDF uploads.
+
+## Highlights
+
+- Implemented role-based authentication and authorization.
+- Built a complete property management workflow with CRUD operations.
+- Developed reservation, favorites, and booking systems.
+- Integrated secure file uploads using Multer.
+- Implemented MongoDB-backed session management.
+- Followed MVC architecture for maintainability and scalability.
 
 ## Features
 
@@ -25,11 +38,9 @@ A full-stack web application built with Node.js, Express, and MongoDB that mimic
 
 ## Screenshots / Demo
 
-*(Add screenshots or GIFs of the application running here)*
-
 * **Home Page:** `[Placeholder for screenshot]`
+* **Dashboard:** `[Placeholder for screenshot]`
 * **Property Details:** `[Placeholder for screenshot]`
-* **Host Dashboard:** `[Placeholder for screenshot]`
 * **User Favorites/Bookings:** `[Placeholder for screenshot]`
 
 ## Tech Stack
