@@ -1,8 +1,15 @@
-# HomeStay
+<div align="center">
+
+# 🏠HomeStay
+
+Property rental platform inspired by Airbnb, built with Node.js, Express, MongoDB, EJS, and Tailwind CSS.
+
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![EJS](https://img.shields.io/badge/EJS-B4CA65?style=for-the-badge)
+
+</div>
 
 ## Overview
 
@@ -44,13 +51,16 @@ A full-stack web application built with Node.js, Express, and MongoDB that mimic
 
 ## Screenshots
 
-| Home Page | Host Dashboard |
-|------------|------------|
-| ![](assets/homePage.png) | ![](assets/dashBoard.png) |
-
-| Property Details | Bookings |
-|------------|------------|
-| ![](assets/details.png) | ![](assets/booking.png) |
+<table>
+<tr>
+<td><img src="assets/homePage.png" width="500"/></td>
+<td><img src="assets/dashBoard.png" width="500"/></td>
+</tr>
+<tr>
+<td><img src="assets/details.png" width="500"/></td>
+<td><img src="assets/booking.png" width="500"/></td>
+</tr>
+</table>
 
 ## Tech Stack
 
@@ -68,7 +78,7 @@ A full-stack web application built with Node.js, Express, and MongoDB that mimic
 
 The application follows a traditional **MVC (Model-View-Controller)** architecture and relies on Server-Side Rendering (SSR):
 
-
+![Architecture](assets/architecture.png)
 
 ## Project Structure
 
@@ -143,41 +153,6 @@ The server will start running at `http://localhost:<PORT>` (e.g., `http://localh
 *   `npm run dev`: Starts the application using `nodemon` for automatic restarts on file changes, and concurrently runs the Tailwind CSS watcher to compile styles.
 *   `npm start`: Starts the standard Node.js server and concurrently runs the Tailwind CSS watcher.
 *   `npm run build:css`: Runs the Tailwind CLI to compile `views/input.css` into `public/output.css` in watch mode.
-
-## Database
-
-- User Model
-  - Authentication
-  - Favorites
-  - Reservations
-  - Bookings
-
-- Home Model
-  - Property details
-  - Image uploads
-  - House rules PDF
-
-## Authentication
-
-- Session-based authentication
-- MongoDB-backed session storage
-- Role-based access control (Guest / Host)
-- Protected host routes
-
-## Key Workflows
-
-1.  **Guest Browsing Flow:** A guest registers/logs in -> Navigates to `/home` -> Views property details (`/homes/:id`) -> Adds to Favorites -> Moves to Reservations -> Finalizes Booking.
-2.  **Host Publishing Flow:** A user registers/logs in as a Host -> Navigates to the Host Dashboard -> Submits the Add Home form -> Multer processes the `multipart/form-data`, saving the image/PDF to `/uploads` -> The Home is saved to MongoDB -> The Home becomes visible in the public Store.
-
-## Performance & Security Considerations
-
-*   **Data Integrity:** The application heavily relies on Mongoose pre-hooks (`findOneAndDelete`) to maintain referential integrity. Deleting a home cleans up the state across all associated user accounts.
-*   **File Upload Security:** Multer is configured with a custom `fileFilter` that strictly limits incoming file mimetypes to `image/jpeg`, `image/png`, `image/jpg`, and `application/pdf`, preventing malicious executable uploads.
-*   **Static File Serving:** Uploaded files and compiled CSS are served efficiently via Express's built-in `express.static` middleware.
-
-## Deployment
-
-*Yet to deploy*
 
 ## Contributing
 
